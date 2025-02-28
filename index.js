@@ -4,12 +4,13 @@ const connectDB = require("./config/db");
 const { Client } = require("@notionhq/client");
 const scholarshipRoutes = require('./routes/scholarshipRoutes')
 const notionRoutes = require('./routes/notionRoutes')
+const cors = require('cors')
 
 // Connect to MongoDB
 connectDB();
 
 const app = express();
-
+app.use(cors())
 
 // Middleware
 app.use(express.json()); // Body parser for JSON
